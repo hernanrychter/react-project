@@ -1,0 +1,25 @@
+#itemContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    border: black solid thin;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 2px 5px 0px;
+}
+
+#precioId{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+   
+}
+
+#imagenProducto{
+   width: 160px;
+   height: 220px;
+}

@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
-import ItemListContainer from './components/itemListContainer';
+import {ItemListContainer} from './components/itemListContainer';
 
 const App = () => {
   return (
     <>
     <Navbar/>
-    <ItemListContainer greetings="Aqui irá el catalogo de Productos"/>
+    <ItemListContainer/>
   </>
   );
 }

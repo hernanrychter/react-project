@@ -4,7 +4,7 @@ import "../components/itemCount.css";
 const ItemCount = ({stock,initial})=>{
 
     
-    const [count,setCount] = useState(initial)
+    const [count,setCount] = useState(1)
 
     const restar= () =>{
         if(count>0){

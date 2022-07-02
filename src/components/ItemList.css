@@ -1,0 +1,6 @@
+#ItemsContainer{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
