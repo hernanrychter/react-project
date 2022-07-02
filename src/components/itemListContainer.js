@@ -3,6 +3,8 @@ import {ItemList} from './itemList';
 import shampooCoco from './Images/shampooCoco.png';
 import shampooHialuronico from './Images/shampooHialuronico.png';
 import shampooAvenaYmiel from './Images/shampooAvenaYmiel.png';
+import SyncLoader from "react-spinners/SyncLoader";
+import './itemListContainer.css';
 
 
 const productosIniciales = [
@@ -22,6 +24,14 @@ export const ItemListContainer = ()=>{
   
   const [productos, setProductos] = useState([]);
 
+  const [loading, setLoading]=useState(false)
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },3000)
+  },[])
+
 useEffect(()=>{
   promesa.then((productos)=>{
     setProductos(productos); 
@@ -30,11 +40,14 @@ useEffect(()=>{
     console.log("error")
   })
   } , []) //Array de dependencia vacio, se ejecuta solo cuando se monta el componente
-
+    
     return (
-      <>
+       loading?
+       <div className="spinner">
+       <SyncLoader color="#d237b4" margin={10} size={20} speedMultiplier={1}/>
+       </div>
+    :
       <ItemList productos = {productos}/>
-      </>
     )
   
 }
