@@ -16,13 +16,23 @@ const productosIniciales = [
 const promesa = new Promise ((resolve,reject)=>{ 
     setTimeout(()=>{
     resolve(productosIniciales)
-    },2000)
+    },0)
  });
 
 
 export const ItemListContainer = ()=>{
   
   const [productos, setProductos] = useState([]);
+
+  useEffect(()=>{
+    promesa.then((productos)=>{
+      setProductos(productos); 
+    })
+    .catch(()=>{
+      console.log("error")
+    })
+    } , []) //Array de dependencia vacio, se ejecuta solo cuando se monta el componente  
+
 
   const [loading, setLoading]=useState(false)
   useEffect(()=>{
@@ -32,15 +42,7 @@ export const ItemListContainer = ()=>{
     },3000)
   },[])
 
-useEffect(()=>{
-  promesa.then((productos)=>{
-    setProductos(productos); 
-  })
-  .catch(()=>{
-    console.log("error")
-  })
-  } , []) //Array de dependencia vacio, se ejecuta solo cuando se monta el componente
-    
+
     return (
        loading?
        <div className="spinner">
