@@ -8,7 +8,7 @@ export const ItemList = ({productos})=>{
     return(
         <>
         <div id="ItemsContainer">
-        {productos.map((producto)=><Item id={producto.id} tipoProducto={producto.tipoProducto} linea={producto.linea} precio={producto.precio} stock={producto.stock} imagen={producto.imagen}/>)} 
+        {productos.map((producto)=><Item key={producto.id} category={producto.category} linea={producto.linea} precio={producto.precio} stock={producto.stock} imagen={producto.imagen}/>)} 
         </div>
         </>
     )

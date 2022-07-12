@@ -3,9 +3,10 @@ import cart from '../Assets/cart.png';
 
 const CartWidet = () =>{
     return (
-    <>
-    <img className="cart" src={cart}/><p>4</p>
-    </>
+    <div className="cart-container">
+    <img className="cart" src={cart}/>
+    <p className="counternumero">4</p>
+    </div>
     )
 
 }
